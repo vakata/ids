@@ -1,0 +1,48 @@
+{
+    "name": "vakata/ids",
+    "description": "A simple PHP IDS based on Expose / PHPIDS rules",
+    "keywords": [
+        "vakata",
+        "ids"
+    ],
+    "homepage": "https://github.com/vakata/ids",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vakata",
+            "email": "github@vakata.com",
+            "homepage": "http://www.vakata.com",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/vakata/phpdoc-md"
+        }
+    ],
+    "require": {
+        "php" : ">=7.0.0",
+        "vakata/http" : "^1.3.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "codeclimate/php-test-reporter": "dev-master",
+        "clean/phpdoc-md": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "vakata\\ids\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "vakata\\ids\\test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "psr2": "php-cs-fixer fix ./src",
+        "phpdoc": "phpdoc-md"
+    }
+}
