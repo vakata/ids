@@ -21,6 +21,12 @@ class IDS
         if (isset($rules['filters'])) {
             $rules = $rules['filters'];
         }
+        $rules = array_map(function ($v) {
+            if (isset($v['tags']) && isset($v['tags']['tag'])) {
+                $v['tags'] = $v['tags']['tag'];
+            }
+            return $v;
+        }, $rules);
         return new static($rules);
     }
     /**
@@ -34,8 +40,9 @@ class IDS
     }
     /**
      * Create an instance.
+     * Each rule is and array and must contain `rule` and `impact` keys, and may contain `tags` and `description` keys
      * @method __construct
-     * @param  array       $rules array or rule arrays, each rule must contain a rule key, and may contain a tags key
+     * @param  array       $rules array or rule arrays
      */
     public function __construct(array $rules = [])
     {
@@ -100,7 +107,7 @@ class IDS
                     ) {
                         continue;
                     }
-                    if (preg_match('(' . $rule['rule'] . ')im', $v)) {
+                    if (preg_match('/' . $rule['rule'] . '/im', $v)) {
                         $impact += (int)$rule['impact'];
                         $this->violations[] = [
                             'rule' => $rule,
