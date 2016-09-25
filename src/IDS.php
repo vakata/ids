@@ -89,8 +89,7 @@ class IDS
     protected function run(array $data, int $threshold = null, array $tags = null)
     {
         $impact = 0;
-        foreach ($data as $k => $v)
-        {
+        foreach ($data as $v) {
             if (is_array($v)) {
                 $impact += $this->run($v, $threshold !== null ? $threshold - $impact : null);
                 if ($threshold !== null && $impact >= $threshold) {
