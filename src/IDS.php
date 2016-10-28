@@ -12,7 +12,7 @@ class IDS
     /**
      * Create an instance from a rule file. Rule files follow the Expose / PHPIDS format
      * @param  string   $path the path to the file to load
-     * @return \vakata\ids\IDS         the new instance
+     * @return self         the new instance
      */
     public static function fromFile(string $path) : IDS
     {
