@@ -3,8 +3,8 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
-[![Code Climate][ico-cc]][link-cc]
-[![Tests Coverage][ico-cc-coverage]][link-cc]
+[![Scrutinizer Code Quality][ico-code-quality]][link-scrutinizer]
+[![Code Coverage][ico-scrutinizer]][link-scrutinizer]
 
 A simple PHP IDS based on Expose / PHPIDS rules.
 
