@@ -2,8 +2,6 @@
 
 namespace vakata\ids;
 
-use vakata\http\Request;
-
 class IDS
 {
     protected $rules;
@@ -44,21 +42,6 @@ class IDS
     public function __construct(array $rules = [])
     {
         $this->rules = $rules;
-    }
-    /**
-     * Analyze an incoming request
-     * @param  \vakata\http\Request        $req       the request to analyze
-     * @param  int|null       $threshold if non-null analysis will stop once this impact number is reached
-     * @param  array|null     $tags      if non-null only rules containing any of the supplied tags will be run
-     * @return int                    the total impact of the request
-     */
-    public function analyzeRequest(Request $req, int $threshold = null, array $tags = null) : int
-    {
-        $this->violations = [];
-        return $this->run([
-            'get' => $req->getQuery(),
-            'post' => $req->getPost()
-        ], $threshold, $tags);
     }
     /**
      * Analyze an array of data

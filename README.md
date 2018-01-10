@@ -20,6 +20,7 @@ $ composer require vakata/ids
 
 ``` php
 $ids = new \vakata\ids\IDS();
+$impact = $ids->analyzeData(['get' => $_GET, 'post' => $_POST ]);
 ```
 
 Read more in the [API docs](docs/README.md)

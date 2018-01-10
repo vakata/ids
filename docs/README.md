@@ -1,3 +1,3 @@
 # vakata\ids
 
-* [vakata\ids\IDS](IDS.md) 
+* [IDS](IDS.md) 
