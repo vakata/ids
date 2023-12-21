@@ -83,7 +83,7 @@ class IDS
                     ) {
                         continue;
                     }
-                    if (preg_match('/' . $rule['rule'] . '/im', $v)) {
+                    if ($v && preg_match('/' . $rule['rule'] . '/im', $v)) {
                         $impact += (int)$rule['impact'];
                         $this->violations[] = [
                             'rule' => $rule,
