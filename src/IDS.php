@@ -24,7 +24,7 @@ class IDS
             }
             return $v;
         }, $rules);
-        return new static($rules);
+        return new self($rules);
     }
     /**
      * Creates an instance from the default rule file that comes with the lib.
@@ -50,7 +50,7 @@ class IDS
      * @param  array|null     $tags      if non-null only rules containing any of the supplied tags will be run
      * @return int                    the total impact of the data
      */
-    public function analyzeData(array $data, int $threshold = null, array $tags = null) : int
+    public function analyzeData(array $data, ?int $threshold = null, ?array $tags = null) : int
     {
         $this->violations = [];
         return $this->run($data, $threshold, $tags);
@@ -63,7 +63,7 @@ class IDS
     {
         return $this->violations;
     }
-    protected function run(array $data, int $threshold = null, array $tags = null)
+    protected function run(array $data, ?int $threshold = null, ?array $tags = null)
     {
         $impact = 0;
         foreach ($data as $v) {
